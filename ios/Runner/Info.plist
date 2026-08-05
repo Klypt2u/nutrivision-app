@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>NutriVision AI</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>nutrivision_ai</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>12.0</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
+
+	<!-- ============================================================ -->
+	<!-- NutriVision AI — privacy-sensitive permissions -->
+	<!-- ============================================================ -->
+
+	<!-- Required for: image_picker (live camera capture), mobile_scanner (barcode) -->
+	<key>NSCameraUsageDescription</key>
+	<string>NutriVision AI uses your camera to scan barcodes and analyze meals with on-device AI. Images are processed for food recognition only and are never uploaded without your action.</string>
+
+	<!-- Required for: image_picker gallery loading -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NutriVision AI can analyze photos of meals from your library to estimate calories and macros.</string>
+
+	<!-- Required for: image_picker saving snapshots -->
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>NutriVision AI can save captured meal photos to your photo library.</string>
+
+	<!-- Required for: any background net for AI queries / OFF lookups -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+	</dict>
+
+	<!-- ============================================================ -->
+	<!-- iOS 14+ App Tracking Transparency (defaults to off) -->
+	<!-- ============================================================ -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>NutriVision AI does not track you across apps. This prompt is reserved for future opt-in features.</string>
+
+	<!-- ============================================================ -->
+	<!-- Avoid App Store encryption export compliance prompts -->
+	<!-- ============================================================ -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+</dict>
+</plist>

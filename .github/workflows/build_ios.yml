@@ -65,6 +65,9 @@ jobs:
           ensure NSPhotoLibraryUsageDescription "NutriVision AI reads meal photos for AI calorie analysis."
           ensure NSPhotoLibraryAddUsageDescription "NutriVision AI saves captured meal photos to your library."
 
+      - name: flutter clean (nuke stale .dart_tool kernel snapshot)
+        run: flutter clean
+
       - name: Move .env out of source tree before build
         run: |
           if [ -f .env ]; then
@@ -73,6 +76,9 @@ jobs:
 
       - name: flutter pub get
         run: flutter pub get
+
+      - name: flutter analyze (fail-fast Dart check)
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: flutter build ios (release, no codesign)
         run: |

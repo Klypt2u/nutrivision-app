@@ -70,7 +70,7 @@ class MealEntry {
     this.confidence,
   });
 
-  MealEntry._({
+  MealEntry.create({
     required String? id,
     required this.name,
     this.brand,
@@ -88,7 +88,7 @@ class MealEntry {
 
   factory MealEntry.fromFood(FoodItem food, double grams, MealType type) {
     final m = food.macrosFor(grams);
-    return MealEntry._(
+    return MealEntry.create(
       id: null,
       name: food.name,
       brand: food.brand,
@@ -105,7 +105,7 @@ class MealEntry {
     );
   }
 
-  factory MealEntry.fromJson(Map<String, dynamic> j) => MealEntry._(
+  factory MealEntry.fromJson(Map<String, dynamic> j) => MealEntry.create(
         id: j['id'] as String?,
         name: j['name'] as String,
         brand: j['brand'] as String?,

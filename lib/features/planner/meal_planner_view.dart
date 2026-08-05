@@ -6,7 +6,7 @@ import '../../core/models/food_item.dart';
 import '../../core/models/meal_entry.dart';
 import '../../core/models/meal_plan.dart';
 import '../../core/providers/daily_log_provider.dart';
-import '../../core/services/meal_planner_provider.dart';
+import '../../core/providers/meal_planner_provider.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/utils/formatters.dart';
@@ -204,7 +204,7 @@ class _MealPlannerViewState extends ConsumerState<MealPlannerView> {
     // `gramsConsumed` to 1 g so the per-100g math in macrosFor() yields a
     // tiny contribution and our explicit pre-computed totals remain the
     // source of truth — this matches how AI-scan entries behave.
-    final entry = MealEntry._(
+    final entry = MealEntry.create(
       id: null,
       name: m.name,
       brand: 'Planned',

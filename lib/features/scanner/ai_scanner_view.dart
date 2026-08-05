@@ -421,7 +421,7 @@ class _AiScannerViewState extends ConsumerState<AiScannerView> {
     );
   }
 
-  Future<void> _addAnalysisToLog({required MealType type, required AiDetectedFood food, required MealType _}) async {
+  Future<void> _addAnalysisToLog({required MealType type, required AiDetectedFood food}) async {
     // Add each detected food to today's log.
     setState(() => _analyzing = true);
     for (final d in _analysis!.foods) {
@@ -524,7 +524,7 @@ class _CaptureButtonState extends State<_CaptureButton> with SingleTickerProvide
 
 class _AnalysisPanel extends StatefulWidget {
   final AiMealAnalysis analysis;
-  final Future<void> Function({required MealType type, required AiDetectedFood food, required MealType _}) onAdd;
+  final Future<void> Function({required MealType type, required AiDetectedFood food}) onAdd;
   final VoidCallback onClose;
   const _AnalysisPanel({required this.analysis, required this.onAdd, required this.onClose});
 
